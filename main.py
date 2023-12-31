@@ -77,8 +77,10 @@ def chapter4():
     choice = input("Type your answer (you must spell correctly): ").lower()
 
     if choice == "echo":
-        end_game("Correctly guessing 'an echo', a hidden door opens reavealing a room filled with treasure! Zandar has found the riches of Sudden Death Island!")
+        # Chapter 8: The Secret
+        end_game("Correctly guessing an 'echo', a hidden door opens reavealing a room filled with treasure! Zandar has found the riches of Sudden Death Island!")
     else:
+        # Chapter 9: The Riddle's Price
         end_game("Unable to solve the riddle, the cave collapses trapping Zandar. With no means of escape, Zandar knows his fate is sealed...")
 
 # Chapter 5: The Right Path
@@ -91,13 +93,45 @@ def chapter5():
         # Chapter 10: The Leap of Faith
         end_game("Zandar swings across the chasm and lands safely. On the other side, he finds the treasure!")
     elif choice == "back":
+        # Chapter 11: A Second Chance
         print("Zandar wisely returns to the fork and takes the left path.")
         chapter4()
     else:
         print("Invalid choice. Please type 'swing' or 'back'.")
         chapter5()
 
+# Chapter 6: The Map's Path
+def chapter6():
+    print("Following the map, Zandar finds a hidden temple. A pedestal inside asks for a key.")
+    print("Does he use the key or search the temple?")
+    choice = input("Type 'key' to use the key or 'search' to search the temple: ").lower()
 
+    if choice == "key":
+        # Chapter 12: The Key's Power
+        end_game("The key fits perfectly. The temple walls slide open to reveal a room filled with gold and jewels. Zandar is rich beyond his wildest dreams!")
+    elif choice == "search":
+        # Chapter 13: A Hidden Trap
+        print("While searching, Zandar triggers a trap! He narrowly escapes, but loses the key in the process. Zandar goes back to the beach to try and build a raft.")
+        chapter7()
+    else:
+        print("Invalid choice. Please type 'key' or 'search'.")
+        chapter6()
+
+# Chapter 7: The Raft Choice
+def chapter7():
+    print("Zandar builds a raft, but the sea is treacherous. A storm approaches.")
+    print("Does he set sail or wait out the storm?")
+    choice = input("Type 'sail' to set sail or 'wait' to wait out the storm: ").lower()
+
+    if choice == "sail":
+        # Chapter 14: The Storm's Fury
+        end_game("Zandar sets sail. The storm capsizes his raft, and he's lost at sea.")
+    elif choice == "wait":
+        # Chapter 15: Patience Pays
+        end_game("The storm passes. In the calm, Zandar seas a ship on the horizon. He's rescued and shares the tale of Sudden Death Island.")
+    else:
+        print("Invalid choice. Please type 'sail' or 'wait'.")
+        chapter7()
 
 def end_game(message):
     print("\n" + message)
